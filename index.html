@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BridgeBond Health – Diaspora‑Powered Care</title>
+  <meta name="description" content="BridgeBond Health connects diaspora sponsors to trusted healthcare & social care for loved ones in Nigeria – with telemedicine, home care, and transparent funding.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#EFF6FF',
+              100: '#DBEAFE',
+              200: '#BFDBFE',
+              300: '#93C5FD',
+              400: '#60A5FA',
+              500: '#3B82F6',
+              600: '#2563EB',
+              700: '#1D4ED8',
+              800: '#1E40AF',
+              900: '#1E3A8A',
+            },
+            tealx: {
+              500: '#14B8A6',
+              600: '#0D9488',
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(2, 6, 23, 0.08)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { --ring: #3B82F6; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 group">
+          <svg width="34" height="34" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="drop-shadow">
+            <!-- Bridge arc -->
+            <path d="M6 38c8-10 20-16 26-16s18 6 26 16" stroke="#3B82F6" stroke-width="4" stroke-linecap="round"/>
+            <!-- Bonded heart + cross (health) -->
+            <path d="M28 44c-3.5-2.5-6-5.5-6-9a6 6 0 0 1 11-3 6 6 0 0 1 11 3c0 3.5-2.5 6.5-6 9l-5 3-5-3z" fill="#14B8A6"/>
+            <rect x="30.5" y="30" width="3" height="10" rx="1.5" fill="white"/>
+            <rect x="27" y="33.5" width="10" height="3" rx="1.5" fill="white"/>
+            <!-- Stethoscope hint -->
+            <path d="M48 46c0 4-3 7-7 7s-7-3-7-7" stroke="#0D9488" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span class="text-lg font-extrabold tracking-tight text-slate-900">BridgeBond<span class="text-primary-600"> Health</span></span>
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#features" class="hover:text-primary-700">Features</a>
+          <a href="#how" class="hover:text-primary-700">How it works</a>
+          <a href="#pricing" class="hover:text-primary-700">Pricing</a>
+          <a href="#security" class="hover:text-primary-700">Security</a>
+          <a href="#contact" class="hover:text-primary-700">Contact</a>
+        </nav>
+
+        <!-- CTA + mobile -->
+        <div class="flex items-center gap-3">
+          <a href="#contact" class="hidden sm:inline-flex items-center rounded-xl bg-primary-600 px-4 py-2 text-white font-semibold shadow-soft hover:bg-primary-700 transition">Join Waitlist</a>
+          <button id="menuBtn" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-300 hover:bg-slate-100">
+            <span class="sr-only">Open menu</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile panel -->
+      <div id="mobileNav" class="md:hidden hidden pb-4">
+        <nav class="flex flex-col gap-2 text-sm font-semibold">
+          <a href="#features" class="px-3 py-2 rounded-lg hover:bg-slate-100">Features</a>
+          <a href="#how" class="px-3 py-2 rounded-lg hover:bg-slate-100">How it works</a>
+          <a href="#pricing" class="px-3 py-2 rounded-lg hover:bg-slate-100">Pricing</a>
+          <a href="#security" class="px-3 py-2 rounded-lg hover:bg-slate-100">Security</a>
+          <a href="#contact" class="px-3 py-2 rounded-lg hover:bg-slate-100">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-primary-50 to-white pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-slate-900">Diaspora‑powered healthcare for loved ones in Nigeria.</h1>
+          <p class="mt-5 text-lg text-slate-600 max-w-xl">Book teleconsultations, arrange home visits, fund authentic medications, and track progress — all from a secure sponsor dashboard linked to a patient app.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#contact" class="inline-flex items-center rounded-xl bg-primary-600 px-5 py-3 text-white font-semibold shadow-soft hover:bg-primary-700 transition">Get early access</a>
+            <a href="#demo" class="inline-flex items-center rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-white/60">See live demo →</a>
+          </div>
+          <div class="mt-6 flex items-center gap-4 text-xs text-slate-500">
+            <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tealx-500"></span> GDPR‑aligned data hosting (UK)</span>
+            <span>Verified doctors • Vetted carers • NAFDAC pharmacies</span>
+          </div>
+        </div>
+        <div class="relative">
+          <!-- Phone mockup -->
+          <div class="mx-auto w-[320px] sm:w-[360px] aspect-[9/19] rounded-[2rem] bg-white border-8 border-slate-900 shadow-soft overflow-hidden">
+            <div class="h-10 bg-slate-900"></div>
+            <div class="p-4 space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="font-bold">Sponsor Dashboard</div>
+                <span class="text-xs text-slate-500">demo</span>
+              </div>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="rounded-2xl p-3 bg-primary-100">
+                  <div class="text-2xl font-extrabold text-primary-700">3</div>
+                  <div class="text-xs text-slate-600">Upcoming appts</div>
+                </div>
+                <div class="rounded-2xl p-3 bg-teal-100">
+                  <div class="text-2xl font-extrabold text-tealx-600">2</div>
+                  <div class="text-xs text-slate-600">Home visits</div>
+                </div>
+                <div class="rounded-2xl p-3 bg-amber-100">
+                  <div class="text-2xl font-extrabold text-amber-600">1</div>
+                  <div class="text-xs text-slate-600">Refill alert</div>
+                </div>
+              </div>
+              <div class="rounded-xl border border-slate-200 p-3">
+                <div class="text-sm font-semibold">Dad – Hypertension plan</div>
+                <div class="mt-2 h-2 w-full bg-slate-100 rounded">
+                  <div class="h-2 w-2/3 bg-primary-500 rounded"></div>
+                </div>
+                <div class="mt-2 text-xs text-slate-500">Next: nurse visit Tue 10:00</div>
+              </div>
+              <button class="w-full rounded-xl bg-slate-900 text-white py-2 font-semibold">Join consultation</button>
+            </div>
+          </div>
+          <!-- Glow -->
+          <div class="absolute -z-10 -top-20 -right-20 w-72 h-72 bg-primary-300/40 blur-3xl rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BADGES / BANNERS -->
+  <section class="py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <div class="rounded-xl bg-white p-3 border border-slate-200">GDPR aligned</div>
+        <div class="rounded-xl bg-white p-3 border border-slate-200">NDPR aware</div>
+        <div class="rounded-xl bg-white p-3 border border-slate-200">NAFDAC pharmacies</div>
+        <div class="rounded-xl bg-white p-3 border border-slate-200">Verified doctors</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Everything in one place</h2>
+        <p class="mt-3 text-slate-600">A dual‑sided platform for diaspora sponsors and local patients — built for transparency, safety, and continuity of care.</p>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature cards -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
+          <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
+            <span class="text-primary-700 font-extrabold">1</span>
+          </div>
+          <h3 class="font-bold text-lg">Sponsor Dashboard</h3>
+          <p class="mt-2 text-sm text-slate-600">Book consults, approve prescriptions, fund services with Health Credits, and track visits & vitals.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
+          <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
+            <span class="text-primary-700 font-extrabold">2</span>
+          </div>
+          <h3 class="font-bold text-lg">Patient App</h3>
+          <p class="mt-2 text-sm text-slate-600">Simple, multilingual patient portal for appointments, meds, reminders, and education.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
+          <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
+            <span class="text-primary-700 font-extrabold">3</span>
+          </div>
+          <h3 class="font-bold text-lg">Teleconsultations</h3>
+          <p class="mt-2 text-sm text-slate-600">Secure video with verified clinicians. 3‑way calls so sponsors can attend if the patient wishes.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
+          <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
+            <span class="text-primary-700 font-extrabold">4</span>
+          </div>
+          <h3 class="font-bold text-lg">Home & Social Care</h3>
+          <p class="mt-2 text-sm text-slate-600">Vetted carers provide UK‑style domiciliary visits with MAR sheets and wellbeing checks.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
+          <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
+            <span class="text-primary-700 font-extrabold">5</span>
+          </div>
+          <h3 class="font-bold text-lg">EHR & CDS</h3>
+          <p class="mt-2 text-sm text-slate-600">Persistent records with Clinical Decision Support to flag risks, interactions, and missed refills.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft">
+          <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center mb-4">
+            <span class="text-primary-700 font-extrabold">6</span>
+          </div>
+          <h3 class="font-bold text-lg">Authentic Medications</h3>
+          <p class="mt-2 text-sm text-slate-600">NAFDAC‑approved pharmacy partners with refill tracking and adherence nudges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="py-16 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl font-extrabold text-slate-900">How it works</h2>
+          <ol class="mt-6 space-y-5">
+            <li class="flex gap-3">
+              <div class="flex-none w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center font-bold">1</div>
+              <div>
+                <div class="font-semibold">Create sponsor account & add a patient</div>
+                <p class="text-sm text-slate-600">Invite family, set permissions, and fund the Health Credits wallet.</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <div class="flex-none w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center font-bold">2</div>
+              <div>
+                <div class="font-semibold">Book care</div>
+                <p class="text-sm text-slate-600">Teleconsults, lab tests, authentic meds, or domiciliary nurse visits.</p>
+              </div>
+            </li>
+            <li class="flex gap-3">
+              <div class="flex-none w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center font-bold">3</div>
+              <div>
+                <div class="font-semibold">Track everything</div>
+                <p class="text-sm text-slate-600">See visit notes, MAR sheets, vitals and outcomes — all in your dashboard.</p>
+              </div>
+            </li>
+          </ol>
+          <div class="mt-8 flex gap-3">
+            <a href="#contact" class="inline-flex items-center rounded-xl bg-tealx-500 px-5 py-3 text-white font-semibold shadow-soft hover:bg-tealx-600 transition">Join pilot</a>
+            <a href="#pricing" class="inline-flex items-center rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50">See pricing</a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft">
+            <div class="font-semibold text-slate-700">Live visit log (demo)</div>
+            <div class="mt-4 space-y-3 text-sm">
+              <div class="flex items-center justify-between bg-white p-3 rounded-xl border"><span>Dr. K – Teleconsult</span><span class="text-slate-500">Mon 09:30</span></div>
+              <div class="flex items-center justify-between bg-white p-3 rounded-xl border"><span>Nurse – Home BP check</span><span class="text-slate-500">Tue 10:00</span></div>
+              <div class="flex items-center justify-between bg-white p-3 rounded-xl border"><span>Pharmacy – Med delivery</span><span class="text-slate-500">Wed 14:00</span></div>
+            </div>
+          </div>
+          <div class="absolute -z-10 -bottom-10 -left-10 w-72 h-72 bg-tealx-500/20 blur-3xl rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Simple, transparent pricing</h2>
+        <p class="mt-3 text-slate-600">Start free on the waitlist. Pay only when care begins. Prices are indicative; pilot discounts apply.</p>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6">
+        <!-- Plan 1 -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft flex flex-col">
+          <div class="text-sm font-semibold text-tealx-600">Starter</div>
+          <div class="mt-2 text-4xl font-extrabold">£15<span class="text-base font-semibold text-slate-500">/mo</span></div>
+          <p class="mt-2 text-sm text-slate-600">For light, occasional care.</p>
+          <ul class="mt-6 space-y-2 text-sm">
+            <li>• 1 sponsor • 1 patient</li>
+            <li>• Pay‑as‑you‑go consults & meds</li>
+            <li>• Basic reminders & records</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-white font-semibold hover:opacity-90">Choose Starter</a>
+        </div>
+        <!-- Plan 2 -->
+        <div class="bg-white border-2 border-primary-600 rounded-2xl p-6 shadow-soft flex flex-col relative">
+          <span class="absolute -top-3 right-6 text-xs px-2 py-1 rounded-full bg-primary-600 text-white">Popular</span>
+          <div class="text-sm font-semibold text-primary-700">Family</div>
+          <div class="mt-2 text-4xl font-extrabold">£35<span class="text-base font-semibold text-slate-500">/mo</span></div>
+          <p class="mt-2 text-sm text-slate-600">For ongoing, chronic care.</p>
+          <ul class="mt-6 space-y-2 text-sm">
+            <li>• 3 sponsors • 2 patients</li>
+            <li>• Priority support</li>
+            <li>• Home visit scheduling</li>
+            <li>• Health Credits wallet</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-flex items-center justify-center rounded-xl bg-primary-600 px-4 py-2 text-white font-semibold hover:bg-primary-700">Choose Family</a>
+        </div>
+        <!-- Plan 3 -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-soft flex flex-col">
+          <div class="text-sm font-semibold text-slate-700">Care Plus</div>
+          <div class="mt-2 text-4xl font-extrabold">Custom</div>
+          <p class="mt-2 text-sm text-slate-600">For complex needs & partners.</p>
+          <ul class="mt-6 space-y-2 text-sm">
+            <li>• Multi‑patient management</li>
+            <li>• White‑label & API access</li>
+            <li>• Dedicated care coordinator</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-flex items-center justify-center rounded-xl bg-slate-900 px-4 py-2 text-white font-semibold hover:opacity-90">Talk to us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURITY -->
+  <section id="security" class="py-16 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-3xl font-extrabold text-slate-900">Security, privacy & compliance</h2>
+          <p class="mt-4 text-slate-600">We design for safety from day one: least‑privilege access, encryption in transit & at rest, and audit trails for clinical actions.</p>
+          <ul class="mt-6 space-y-3 text-sm">
+            <li>• UK data hosting & GDPR alignment</li>
+            <li>• NDPR awareness for Nigerian partners</li>
+            <li>• Verified clinicians & carer background checks</li>
+            <li>• MAR sheets and consultation notes for accountability</li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-soft">
+            <div class="font-semibold text-slate-700">Compliance checklist (demo)</div>
+            <ul class="mt-4 grid grid-cols-2 gap-3 text-sm">
+              <li class="bg-white p-3 rounded-xl border">ISO 27001 ready</li>
+              <li class="bg-white p-3 rounded-xl border">Role‑based access</li>
+              <li class="bg-white p-3 rounded-xl border">Encryption</li>
+              <li class="bg-white p-3 rounded-xl border">Audit logs</li>
+              <li class="bg-white p-3 rounded-xl border">Carer vetting</li>
+              <li class="bg-white p-3 rounded-xl border">Pharmacy partners</li>
+            </ul>
+          </div>
+          <div class="absolute -z-10 -top-10 -right-10 w-72 h-72 bg-primary-300/30 blur-3xl rounded-full"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO / CTA -->
+  <section id="demo" class="py-16 lg:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">See the experience</h2>
+      <p class="mt-3 text-slate-600">Short walkthrough of the sponsor dashboard and patient app (pre‑MVP demo).</p>
+      <!-- Placeholder video frame -->
+      <div class="mt-8 aspect-video rounded-2xl bg-slate-200 border border-slate-300 shadow-soft flex items-center justify-center">
+        <span class="text-slate-500">Embed demo video here</span>
+      </div>
+      <a href="#contact" class="mt-8 inline-flex items-center rounded-xl bg-primary-600 px-5 py-3 text-white font-semibold shadow-soft hover:bg-primary-700 transition">Request a live demo</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl font-extrabold text-slate-900">Join the pilot</h2>
+        <p class="mt-2 text-slate-600">Tell us about your family’s needs and we’ll reach out with next steps.</p>
+      </div>
+      <form class="mt-8 grid gap-4 bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-soft" onsubmit="event.preventDefault(); document.getElementById('formNote').classList.remove('hidden')">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm font-semibold">Your name</label>
+            <input type="text" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200" placeholder="E.g., Eleanor O." />
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Email</label>
+            <input type="email" required class="mt-1 w-full rounded-xl border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200" placeholder="you@example.com" />
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm font-semibold">Country of residence</label>
+            <input type="text" class="mt-1 w-full rounded-xl border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200" placeholder="United Kingdom" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold">Patient location</label>
+            <input type="text" class="mt-1 w-full rounded-xl border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200" placeholder="City, Nigeria" />
+          </div>
+        </div>
+        <div>
+          <label class="text-sm font-semibold">How can we help?</label>
+          <textarea class="mt-1 w-full rounded-xl border-slate-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200" rows="4" placeholder="Teleconsults, home care visits, meds, diagnostics…"></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+          <label class="inline-flex items-center gap-2 text-sm text-slate-600">
+            <input type="checkbox" class="rounded border-slate-300 text-primary-600 focus:ring-primary-200">
+            I agree to the privacy notice
+          </label>
+          <button class="rounded-xl bg-slate-900 text-white px-5 py-2 font-semibold">Submit</button>
+        </div>
+        <p id="formNote" class="hidden text-sm text-tealx-600">Thanks! This demo form doesn’t send data yet. We’ll connect it when your backend is ready.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-5 gap-6 text-sm">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2">
+            <svg width="28" height="28" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 38c8-10 20-16 26-16s18 6 26 16" stroke="#3B82F6" stroke-width="4" stroke-linecap="round"/>
+              <path d="M28 44c-3.5-2.5-6-5.5-6-9a6 6 0 0 1 11-3 6 6 0 0 1 11 3c0 3.5-2.5 6.5-6 9l-5 3-5-3z" fill="#14B8A6"/>
+            </svg>
+            <span class="font-extrabold">BridgeBond Health</span>
+          </div>
+          <p class="mt-3 text-slate-600">Diaspora‑powered care with transparency and dignity.</p>
+        </div>
+        <div>
+          <div class="font-semibold">Product</div>
+          <ul class="mt-3 space-y-2 text-slate-600">
+            <li><a href="#features" class="hover:text-slate-900">Features</a></li>
+            <li><a href="#pricing" class="hover:text-slate-900">Pricing</a></li>
+            <li><a href="#demo" class="hover:text-slate-900">Demo</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-semibold">Company</div>
+          <ul class="mt-3 space-y-2 text-slate-600">
+            <li><a href="#contact" class="hover:text-slate-900">Contact</a></li>
+            <li><a href="#" class="hover:text-slate-900">Privacy</a></li>
+            <li><a href="#" class="hover:text-slate-900">Terms</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-semibold">Follow</div>
+          <ul class="mt-3 space-y-2 text-slate-600">
+            <li><a href="#" class="hover:text-slate-900">LinkedIn</a></li>
+            <li><a href="#" class="hover:text-slate-900">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 text-xs text-slate-500">© <span id="year"></span> BridgeBond Health. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+      });
+    }
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
